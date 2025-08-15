@@ -1,37 +1,30 @@
-package org.example.entities;
+package authservice.entities;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
-import jakarta.persistence.Table;
+import lombok.ToString;
 
-import jdk.jfr.DataAmount;
-import org.apache.logging.log4j.message.AsynchronouslyFormattable;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
-import javax.annotation.processing.Generated;
 
 @Entity
 @Data
-@NOArgsConstructor
+@ToString
+@NoArgsConstructor
 @AllArgsConstructor
-@Table
+@Table(name = "roles")
 public class UserRole {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="role_id")
-
+    @Column(name = "role_id")
     private Long roleId;
+
     private String name;
-
-    public UserRole(){
-
-    }
-
 
 }
