@@ -1,4 +1,4 @@
-package authservice.service;
+package org.example.service;
 
 import authservice.entities.UserInfo;
 import authservice.model.UserInfoDto;
@@ -26,7 +26,7 @@ public class UserDetailsServiceImpl implements UserDetailsService
 {
 
     @Autowired
-    private final UserRepository userRepository;
+    private UserRepository userRepository;
 
     @Autowired
     private final PasswordEncoder passwordEncoder;

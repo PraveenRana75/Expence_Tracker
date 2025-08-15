@@ -1,8 +1,5 @@
 package org.example.entities;
 
-public class RefreshToken {
-    package authservice.entities;
-
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import jakarta.persistence.Entity;
@@ -19,27 +16,24 @@ import lombok.NoArgsConstructor;
 
 import java.time.Instant;
 
-    @Entity
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @Builder
-    @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
-    @Table(name = "tokens")
-    public class RefreshToken {
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+@Table(name = "tokens")
+public class RefreshToken {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-        private String token;
+    private String token;
 
-        private Instant expiryDate;
+    private Instant expiryDate;
 
-        @OneToOne
-        @JoinColumn(name = "id", referencedColumnName = "user_id")
-        private UserInfo userInfo;
-    }
-
-
+    @OneToOne
+    @JoinColumn(name = "id", referencedColumnName = "user_id")
+    private UserInfo userInfo;
 }
